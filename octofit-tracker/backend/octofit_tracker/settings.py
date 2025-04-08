@@ -1,8 +1,8 @@
-# Add MongoDB configuration
+# Add djongo as the database engine
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
+        'NAME': 'monafit_db',
         'HOST': 'localhost',
         'PORT': 27017,
     }
