@@ -1,15 +1,15 @@
-from rest_framework import viewsets, status
+# FILE: monafit-tracker/backend/monafit_tracker/views.py
+
+from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.reverse import reverse
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def api_root(request, format=None):
-    if request.method == 'POST':
-        return Response({"message": "POST request received"}, status=status.HTTP_201_CREATED)
-
-        base_url = 'https://urban-funicular-gxrgg7w6qrpcvqj9.github.dev/'
+    base_url = 'http://urban-funicular-gxrgg7w6qrpcvqj9-8000.app.github.dev/'
     return Response({
         'users': base_url + 'api/users/?format=api',
         'teams': base_url + 'api/teams/?format=api',
