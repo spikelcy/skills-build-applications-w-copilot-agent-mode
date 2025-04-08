@@ -1,4 +1,4 @@
-# Add djongo as the database engine
+# Add MongoDB configuration and installed apps
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -8,8 +8,10 @@ DATABASES = {
     }
 }
 
-# Enable CORS
 INSTALLED_APPS += [
+    'rest_framework',
+    'djongo',
+    'monafit_tracker',
     'corsheaders',
 ]
 
